@@ -1,0 +1,23 @@
+from django.db import models
+from django.utils import timezone
+# Create your models here.
+class Rubros(models.Model):
+	id = models.CharField(max_length=1)
+	rubro = models.CharField(max_length=10)
+	
+class Sub_rubros(models.Model):
+	id = models.IntegerField()
+	rubro = models.CharField(max_length=1)
+	sub_rubro = models.CharField(max_length=64)
+	
+class Cuentas(models.Model):
+	id = models.IntegerField(null=False)
+	sub_rubro = models.IntegerField()
+	cuenta = models.CharField(max_length=256)
+	
+class Diario(models.Model):
+	id = models.integerField(null=False)
+	id_cta = models.integerField()
+	fecha = models.DateTimeField()
+	importe = models.FloatField()
+	ref = models.IntegerField()

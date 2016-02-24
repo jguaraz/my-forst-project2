@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Balance de sumas y saldos</title>
+    </head>
+    <body>
+	<h1 align='center'>Balance de sumas y saldos</h1>
+        <p></p>
+	<table>
+		<tr>
+		<th>Rubro</th><th>Cuenta</th><th>Debe</th><th>Haber</th><th>Saldo deudor</th><th>Saldo Acreedor</th>
+		</tr>
+		{% for result in results %}
+			<tr>
+			<td> {{result.rubro }} </td> 
+			<td>{{ result.cuenta }}</td>
+			<td align='right'>{{result.debe}}</td>
+			<td align='right'>{{result.haber}}</td> 
+			<td align='right'>{{result.saldo_debe}}</td> 
+			<td align='right'>{{result.saldo_haber}}</td> 
+			</tr>
+		{% endfor %}
+	</table>
+	<p></p>
+	
+    </body>
+</html>
