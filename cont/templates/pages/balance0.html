@@ -3,23 +3,24 @@
 <html>
     <head>
         <title>Balance de sumas y saldos</title>
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 	<link rel="stylesheet" href="{% static 'css/cont.css' %}">
     </head>
     <body>
-	<h1 align='center'>Balance de sumas y saldos</h1>
+	<dev class='page-header'><h1 align='center'>Balance de sumas y saldos</h1></div>
         <p></p>
-	<table>
+	<table class="table-stripped">
 		<tr>
-		<th>Rubro</th><th>Cuenta</th><th>Debe</th><th>Haber</th><th>Saldo deudor</th><th>Saldo Acreedor</th>
+		<th>Rubro</th><th>Cuenta</th><th align='center'>Debe</th><th align='center'>Haber</th><th align='center'>Saldo deudor</th><th align='center'>Saldo Acreedor</th>
 		</tr>
 		{% for result in results %}
 			<tr>
 			<td> {{result.rubro }} </td> 
 			<td>{{ result.cuenta }}</td>
-			<td align='right'>{{result.debe}}</td>
-			<td align='right'>{{result.haber}}</td> 
-			<td align='right'>{{result.saldo_debe}}</td> 
-			<td align='right'>{{result.saldo_haber}}</td> 
+			<td align='right' width='110'>{{result.debe}}</td>
+			<td align='right' width='110'>{{result.haber}}</td> 
+			<td align='right' width='110'>{{result.saldo_debe}}</td> 
+			<td align='right' width='110'>{{result.saldo_haber}}</td> 
 			</tr>
 		{% endfor %}
 	</table>
