@@ -11,6 +11,6 @@ def front(request):
 def balance0(request):
     #balance = SumasYSaldos.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
 
-	result = SumasYSaldos.objects.raw('SELECT * FROM sumas_y_saldos WHERE debe > 0 or haber > 0')
+	result = SumasYSaldos.objects.raw('SELECT * FROM sumas_y_saldos WHERE debe > 0 OR haber > 0')
 	#result = SumasYSaldos.objects.all()
 	return render(request, 'pages/balance0.html', {'results': result})

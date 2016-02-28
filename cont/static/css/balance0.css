@@ -1,0 +1,9 @@
+.table-stripped {
+	font-size: 12px;
+}
+.table-stripped tr:nth-child(odd) {
+	background-color: #ddd;
+}
+.table-stripped tr:nth-child(even) {
+	background-color: #eee;
+}
