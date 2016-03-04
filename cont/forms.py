@@ -5,4 +5,4 @@ class DiarioForm(forms.ModelForm):
 
 	class Meta:
 		model = Diario
-		fields = ('fecha', 'importe',)
+		fields = ('fecha', 'id_cta', 'importe', 'ref',)
