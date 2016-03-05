@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.utils import timezone
 from .models import SumasYSaldos
+from .forms import DiarioForm
 
 # Create your views here.
 def base(request):
@@ -14,3 +15,7 @@ def balance0(request):
 	result = SumasYSaldos.objects.raw('SELECT * FROM sumas_y_saldos WHERE debe > 0 OR haber > 0')
 	#result = SumasYSaldos.objects.all()
 	return render(request, 'pages/balance0.html', {'results': result})
+
+def diario_new(request):
+        form = DiarioForm()
+        return render(request, 'pages/diario.html', {'form': form})

@@ -185,3 +185,11 @@ class SumasYSaldos(models.Model):
         db_table = 'sumas_y_saldos' 
 
     
+class Fcuentas(models.Model):
+    id = models.IntegerField(primary_key=True)  # AutoField?
+    sub_rubro = models.IntegerField(blank=True, null=True)
+    cuenta = models.CharField(max_length=256)  # This field type is a guess.
+
+    class Meta:
+        managed = False
+        #db_table = 'cuentas'
